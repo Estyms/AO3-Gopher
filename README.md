@@ -5,7 +5,7 @@
 Here is a project that I wanted to make after learning about the [Archive of Our Own](https://archiveofourown.org/) website
 as well as the [Gopher Protocol](https://tools.ietf.org/html/rfc1436).
 
-The main objective is to make a AO3 Website fast to browse and fast to load.
+The main objective is to make an AO3 Website fast to browse and fast to load.
 
 The gopher protocol is excellent in this task.
 
