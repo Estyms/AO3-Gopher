@@ -7,7 +7,7 @@ as well as the [Gopher Protocol](https://tools.ietf.org/html/rfc1436).
 
 The main objective is to make an AO3 Website fast to browse and fast to load.
 
-The gopher protocol is excellent in this task.
+The gopher protocol is excellent for this task.
 
 
 ## Main Goals
