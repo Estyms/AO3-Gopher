@@ -5,7 +5,7 @@ from expiringdict import ExpiringDict
 class User():
 	# VAR
 	id = ""
-	search_query=[]
+	selectors={}
 
 	# Constructor
 	def __init__(self):

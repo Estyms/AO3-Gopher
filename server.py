@@ -11,6 +11,7 @@ def requestHandler(request: pituophis.Request):
 
     # IF CLIENT IS CONNECTED
     if "/connected/" in request.path:
+        print(request.path)
         user : User = userCache.pop(request.path.split("/")[2])
         userCache[user.id] = user
         return ConnectedRoutes(request, userCache, user.id)
@@ -22,4 +23,4 @@ def requestHandler(request: pituophis.Request):
     
 
 
-pituophis.serve('localhost', 7000, pub_dir="pub", alt_handler=requestHandler)
+pituophis.serve('localhost', 70, pub_dir="pub/", alt_handler=requestHandler)
