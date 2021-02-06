@@ -3,6 +3,7 @@ from typing import List, Dict
 from classes.User import User
 from expiringdict import ExpiringDict
 import random
+import dotenv
 
 pituophisPage = List[pituophis.Item]
 
@@ -21,21 +22,23 @@ def selector(title: str, selectorId: str,
 	
 
 	if selectorId not in userCache[userId].selectors:
-		userCache[userId].selectors[selectorId] = 0
+		userCache[userId].selectors[selectorId] = []
 
 	response: pituophisPage = [
 		pituophis.Item("i", title), 
 	]
 
 	for d in data:
+		print(d.value, userCache[userId].selectors[selectorId])
 		entry: pituophis.Item = pituophis.Item(
 			"1", 
-			"[{}] {}".format('X' if userCache[userId].selectors[selectorId] & d.value else ' ', d.name), 
+			"[{}] {}".format('X' if (d.value in userCache[userId].selectors[selectorId])  else ' ', d.name), 
 			"{}/{}/{}/{}".format(request.path,selectorId, d.value,str(random.randrange(0,0xFFFF))),
-			"localhost",
+			dotenv.get_key("../","HOST"),
 			70
 		)
 		response += [entry]
 	
 	response += [pituophis.Item("i","")]
 	return response
+	

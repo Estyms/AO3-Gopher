@@ -1,11 +1,12 @@
 import random
 import crypt
 from expiringdict import ExpiringDict
+from typing import List, Dict
 
 class User():
 	# VAR
 	id = ""
-	selectors={}
+	selectors : Dict[str, List[int]] = {}
 
 	# Constructor
 	def __init__(self):
@@ -14,4 +15,5 @@ class User():
 		self.id = ''.join(filter(str.isalnum,crypted))
 
 
+# User Session Cache
 userCache = ExpiringDict(0xFFFF, 3600)

@@ -1,6 +1,6 @@
 import pituophis
+import dotenv
 from classes.User import User, userCache
-
 from routes.unconnected import UnconnectedRoutes
 from routes.connected import ConnectedRoutes
 
@@ -8,7 +8,6 @@ from routes.connected import ConnectedRoutes
 
 #REQUEST HANDLER
 def requestHandler(request: pituophis.Request):
-
     # IF CLIENT IS CONNECTED
     if "/connected/" in request.path:
         print(request.path)
@@ -19,7 +18,7 @@ def requestHandler(request: pituophis.Request):
     # IF CLIENT NOT CONNECTED
     else:
         return UnconnectedRoutes(request, userCache)
-
+    dotenv.get_key(".","HOST")
     
 
 

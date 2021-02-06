@@ -1,4 +1,5 @@
 import pituophis
+import dotenv
 from classes.User import User
 
 def UnconnectedRoutes(request: pituophis.Request, userCache):
@@ -11,5 +12,5 @@ def UnconnectedRoutes(request: pituophis.Request, userCache):
 		return [
 			pituophis.Item("i","You are now connected as {}.".format(x.id)),
 			pituophis.Item("i",""),
-			pituophis.Item("1","Continue","/connected/{}".format(x.id),"localhost",70)
+			pituophis.Item("1","Continue","/connected/{}".format(x.id),dotenv.get_key("../","HOST"),70)
 		]

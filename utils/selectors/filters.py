@@ -1,56 +1,56 @@
 from typing import List, Dict
 from utils.selector import SelectorData
 
-warnings: List[SelectorData] = [ 
+archive_warning_ids: List[SelectorData] = [ 
 	SelectorData(
 		"Creator Chose Not To Use Archive Warnings",
-		1
+		14
 	),
 	SelectorData(
 		"Graphic Depictions Of Violence",
-		2
+		17
 	),
 	SelectorData(
 		"Major Character Death",
-		4
+		18
 	),
 	SelectorData(
 		"No Archive Warnings Apply",
-		8
+		16
 	),
 	SelectorData(
 		"Rape/Non-Con",
-		16
+		19
 	),
 	SelectorData(
 		"Underage",
-		32
+		20
 	),
 ]
 
-categories: List[SelectorData] = [ 
+category_ids: List[SelectorData] = [ 
 	SelectorData(
 		"F/F",
-		1
+		116
 	),
 	SelectorData(
 		"F/M",
-		2
+		22
 	),
 	SelectorData(
 		"Gen",
-		4
+		21
 	),
 	SelectorData(
 		"M/M",
-		8
+		23
 	),
 	SelectorData(
 		"Multi",
-		16
+		2246
 	),
 	SelectorData(
 		"Other",
-		32
+		24
 	),
 ]
